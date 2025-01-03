@@ -1,28 +1,12 @@
 package service;
 
 public abstract class PeopleService {
+
     private String name;
     private String lastName;
     private String facultiet;
     private int range;
     private int powerMagic;
-
-
-    public void setRange(int range) {
-        this.range = range;
-    }
-
-    public void setPowerMagic(int powerMagic) {
-        this.powerMagic = powerMagic;
-    }
-
-    public int getRange() {
-        return range;
-    }
-
-    public int getPowerMagic() {
-        return powerMagic;
-    }
 
     public PeopleService(String name, String lastName, String facultiet, int range, int powerMagic) {
         this.powerMagic = powerMagic;
@@ -41,18 +25,6 @@ public abstract class PeopleService {
                 " , дальность магии  = " + range;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setFacultiet(String facultiet) {
-        this.facultiet = facultiet;
-    }
-
     public String getName() {
         return name;
     }
@@ -61,9 +33,25 @@ public abstract class PeopleService {
         return lastName;
     }
 
-    public String getFacultiet() {
-        return facultiet;
-    }
 
+
+    public void comparisons(PeopleService other1, PeopleService other2) {
+        int full1 = other2.range + other2.powerMagic;
+        int full2 = other1.range + other1.powerMagic;
+
+        String result = "";
+        if (full1 > full2  ) {
+            result = other1.getName() + " сильнее " + other2.getName();
+        }
+        else if (full2 > full1) {
+            result = other1.getName() + " сильнее "  + other2.getName();
+        } else if (full1 == full2) {
+            System.out.println("они равны");
+        }
+
+
+        System.out.println(result);
+
+    }
 
 }

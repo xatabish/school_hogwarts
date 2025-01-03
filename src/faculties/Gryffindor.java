@@ -15,6 +15,29 @@ public class Gryffindor extends PeopleService {
         this.nobility = nobility;
     }
 
+    public int getHonor() {
+        return honor;
+    }
+
+    public int getBravery() {
+        return bravery;
+    }
+
+    public int getNobility() {
+        return nobility;
+    }
+
+    public void comparison (Gryffindor people1 , Gryffindor people2) {
+        int allStats1 = people1.getBravery() + people1.getHonor() + people1.getNobility();
+        int allStats2 = people2.getBravery() + people2.getHonor() + people2.getNobility();
+        if (allStats1 > allStats2) {
+            System.out.println(people1.getName() + people1.getLastName() + " сильнее чем  " + people2.getName() + people2.getLastName()  );
+        } else {
+            System.out.println(people2.getName() + people2.getLastName() + " сильнее чем  " + people1.getName() + people1.getLastName()  );
+        }
+
+    }
+
 
     @Override
     public String toString() {
