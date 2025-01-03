@@ -32,7 +32,7 @@ public class Gryffindor extends PeopleService {
         int allStats2 = people2.getBravery() + people2.getHonor() + people2.getNobility();
         if (allStats1 > allStats2) {
             System.out.println(people1.getName() + people1.getLastName() + " сильнее чем  " + people2.getName() + people2.getLastName()  );
-        } else {
+        } else if (allStats2 >allStats1) {
             System.out.println(people2.getName() + people2.getLastName() + " сильнее чем  " + people1.getName() + people1.getLastName()  );
         }
 
